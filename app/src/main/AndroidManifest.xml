@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- 应用权限声明 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />git --version
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.ACCESS_BACKGROUND_LOCATION"
+        tools:targetApi="q" />
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" android:usesPermissionFlags="neverForLocation" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+
+    <!-- 硬件特性声明（非强制） -->
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false" />
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="false" />
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+
+    <!-- 应用核心配置 -->
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Zxcmb"
+        android:label="@string/app_name"
+        tools:targetApi="31">
+
+        <!-- 高德地图配置 -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="624afeb5289837f61a3abc5b696ffc65" />
+        <service android:name="com.amap.api.location.APSService" />
+        <meta-data
+            android:name="com.amap.api.v2.location.AMapLocationMode"
+            android:value="Hight_Accuracy" />
+
+        <!-- 应用入口Activity -->
+        <activity
+            android:name=".MainContainerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 业务功能Activity -->
+        <activity android:name=".BluetoothDeviceActivity" android:exported="false" />
+        <activity android:name=".NavigateActivity" android:exported="false" />
+        <activity android:name=".RideRecordActivity" android:exported="false" />
+        <activity android:name=".BaseActivity" android:exported="false" />
+        <activity android:name=".MainActivity" android:exported="false" />
+        <activity android:name=".EmulatorActivity" android:exported="false" />
+
+        <!-- 运动轨迹相关Activity -->
+        <activity
+            android:name=".SportTrackAnimationActivity"
+            android:exported="false"
+            android:parentActivityName=".MainContainerActivity"/>
+
+        <activity
+            android:name=".SportDataDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".SportTrackAnimationActivity"/>
+
+        <activity
+            android:name=".SegmentDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".SportTrackAnimationActivity"/>
+    </application>
+
+</manifest>

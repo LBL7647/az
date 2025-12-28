@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 我的页面主布局 -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mine_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FA">
+
+    <!-- 可滚动容器：适配页面内容高度 -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- 垂直线性布局：承载所有内容 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- APP信息卡片 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_app_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="25dp"
+                android:layout_marginBottom="10dp">
+
+                <!-- APP图标卡片 -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_app_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <!-- APP图标 -->
+                    <ImageView
+                        android:id="@+id/iv_app_icon"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@mipmap/ic_launcher"
+                        android:scaleType="centerInside"
+                        android:background="#F0F5FF" />
+                </androidx.cardview.widget.CardView>
+
+                <!-- APP名称 -->
+                <TextView
+                    android:id="@+id/tv_app_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:text="骑行助手APP"
+                    android:textColor="#333333"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/cv_app_icon"
+                    app:layout_constraintTop_toTopOf="@id/cv_app_icon" />
+
+                <!-- APP运行状态 -->
+                <TextView
+                    android:id="@+id/tv_app_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="6dp"
+                    android:text="系统状态: 正常运行"
+                    android:textColor="#4CAF50"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@id/cv_app_icon"
+                    app:layout_constraintTop_toBottomOf="@id/tv_app_name" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 骑行统计卡片 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <!-- 统计数据横向布局 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="20dp">
+
+                    <!-- 总里程统计 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/tv_total_distance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0.0"
+                            android:textColor="#333333"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="总里程(km)"
+                            android:textColor="#999999"
+                            android:textSize="12sp"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+
+                    <!-- 分割线 -->
+                    <View android:layout_width="1dp" android:layout_height="30dp" android:layout_gravity="center_vertical" android:background="#EEEEEE"/>
+
+                    <!-- 总时长统计 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/tv_total_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#333333"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="总时长(h)"
+                            android:textColor="#999999"
+                            android:textSize="12sp"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+
+                    <!-- 分割线 -->
+                    <View android:layout_width="1dp" android:layout_height="30dp" android:layout_gravity="center_vertical" android:background="#EEEEEE"/>
+
+                    <!-- 总次数统计 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/tv_total_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#333333"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="总次数"
+                            android:textColor="#999999"
+                            android:textSize="12sp"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 功能菜单卡片 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <!-- 菜单列表垂直布局 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- 个人信息菜单 -->
+                    <TextView
+                        android:id="@+id/menu_personal_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="20dp"
+                        android:text="👤  个人基本信息"
+                        android:textColor="#333333"
+                        android:textSize="16sp"
+                        android:drawableEnd="@android:drawable/arrow_down_float"
+                        android:drawableTint="#CCCCCC" />
+
+                    <!-- 菜单分割线 -->
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F5F5F5" android:layout_marginHorizontal="20dp"/>
+
+                    <!-- OneNET配置菜单 -->
+                    <TextView
+                        android:id="@+id/menu_onenet"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="20dp"
+                        android:text="☁️  OneNET 配置"
+                        android:textColor="#333333"
+                        android:textSize="16sp"
+                        android:drawableEnd="@android:drawable/arrow_down_float"
+                        android:drawableTint="#CCCCCC" />
+
+                    <!-- 菜单分割线 -->
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F5F5F5" android:layout_marginHorizontal="20dp"/>
+
+                    <!-- 系统设置菜单 -->
+                    <TextView
+                        android:id="@+id/menu_settings"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="20dp"
+                        android:text="⚙️  系统设置"
+                        android:textColor="#333333"
+                        android:textSize="16sp"
+                        android:drawableEnd="@android:drawable/arrow_down_float"
+                        android:drawableTint="#CCCCCC" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 底部空白占位 -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

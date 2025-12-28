@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 骑行记录列表项卡片布局 -->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="6dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="3dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <!-- 卡片内容容器 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 日期与ID栏 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- 记录日期 -->
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="17sp"
+                android:textColor="#1976D2"
+                android:textStyle="bold"
+                tools:text="🗓️ 2025年12月02日"/>
+
+            <!-- 记录ID后缀 -->
+            <TextView
+                android:id="@+id/tv_suffix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="#A0A0A0"
+                tools:text="ID: ABCDE"/>
+        </LinearLayout>
+
+        <!-- 分割线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- 骑行时段 -->
+        <TextView
+            android:id="@+id/tv_time_range"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#606060"
+            tools:text="时段：08:30:00 - 09:45:00"/>
+
+        <!-- 核心数据卡片组 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp">
+
+            <!-- 总用时卡片 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:background="@drawable/bg_metric_card_green"
+                android:layout_marginEnd="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="总用时"
+                    android:textSize="12sp"
+                    android:textColor="#388E3C"/>
+
+                <TextView
+                    android:id="@+id/tv_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#4CAF50"
+                    android:textStyle="bold"
+                    android:layout_marginTop="4dp"
+                    tools:text="01:15:00"/>
+            </LinearLayout>
+
+            <!-- 轨迹点数卡片 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:background="@drawable/bg_metric_card_orange"
+                android:layout_marginStart="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="轨迹点数"
+                    android:textSize="12sp"
+                    android:textColor="#F57C00"/>
+
+                <TextView
+                    android:id="@+id/tv_zh_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#FF9800"
+                    android:textStyle="bold"
+                    android:layout_marginTop="4dp"
+                    tools:text="1200 个"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 综合指标汇总 -->
+        <TextView
+            android:id="@+id/tv_metrics_summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#424242"
+            android:layout_marginTop="12dp"
+            tools:text="里程：12.50 km | 均速：25.3 km/h | 爬升：50.1 m"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#388E3C" /> <!-- 深绿压暗 -->
+            <corners android:radius="12dp" />
+            <elevation android:elevation="2dp" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#4CAF50" /> <!-- 鲜明但柔和的绿 -->
+            <corners android:radius="12dp" />
+            <elevation android:elevation="5dp" /> <!-- 主按钮阴影更明显 -->
+        </shape>
+    </item>
+</selector>

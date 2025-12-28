@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 蓝牙设备列表项布局 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:paddingHorizontal="16dp"
+    android:gravity="center_vertical">
+
+    <!-- 设备图标 -->
+    <ImageView
+        android:id="@+id/iv_device_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="12dp"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"/>
+
+    <!-- 设备信息容器 -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- 设备名称 -->
+        <TextView
+            android:id="@+id/tv_device_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未知设备"
+            android:textSize="16sp"
+            android:textColor="#333333"/>
+
+        <!-- 设备MAC地址 -->
+        <TextView
+            android:id="@+id/tv_device_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00:00:00:00:00"
+            android:textSize="12sp"
+            android:textColor="#999999"
+            android:layout_marginTop="2dp"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 关于系统弹窗布局 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="25dp"
+    android:background="@drawable/bg_dialog_card">
+
+    <!-- 弹窗标题 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="关于系统"
+        android:textColor="#333333"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="25dp" />
+
+    <!-- APP信息展示区 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="20dp">
+
+        <!-- APP图标 -->
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/ic_launcher"
+            android:scaleType="fitCenter"
+            android:background="#F0F5FF"
+            android:layout_marginBottom="10dp" />
+
+        <!-- APP名称 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="骑行助手APP"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <!-- APP版本号 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="v1.0.0 Beta Build 20251220"
+            android:textColor="#999999"
+            android:textSize="12sp"
+            android:layout_marginTop="5dp"/>
+    </LinearLayout>
+
+    <!-- 分割线 -->
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EEEEEE" android:layout_marginBottom="15dp"/>
+
+    <!-- 简介标题 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="简介："
+        android:textColor="#333333"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="5dp"/>
+
+    <!-- 系统简介内容 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="本系统基于 Android 移动端与 STM32 嵌入式端开发，实现了骑行数据的实时监测、轨迹记录以及 OneNET 云平台数据同步功能。"
+        android:textColor="#666666"
+        android:textSize="14sp"
+        android:lineSpacingExtra="4dp"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- 版权信息 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Copyright © 2025 Smart Bike System"
+        android:textColor="#CCCCCC"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:layout_marginBottom="25dp"/>
+
+    <!-- 操作按钮栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- 检查更新按钮 -->
+        <TextView
+            android:id="@+id/btn_check_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔄 检查更新"
+            android:textColor="#666666"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:background="?attr/selectableItemBackground"/>
+
+        <!-- 占位分隔 -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+
+        <!-- 确定按钮 -->
+        <TextView
+            android:id="@+id/btn_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="确定"
+            android:textColor="#2196F3"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:background="?attr/selectableItemBackground"/>
+    </LinearLayout>
+
+</LinearLayout>

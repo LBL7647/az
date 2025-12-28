@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 骑行数据悬浮提示框布局 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#CC333333"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:gravity="center"
+    android:layout_margin="8dp"
+    android:radius="8dp">
+
+    <!-- 数据类型文本（时速/海拔等） -->
+    <TextView
+        android:id="@+id/tv_data_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="时速"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"/>
+
+    <!-- 核心数据值文本 -->
+    <TextView
+        android:id="@+id/tv_data_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="15.8 千米/时"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="4dp"/>
+
+    <!-- 数据时间文本 -->
+    <TextView
+        android:id="@+id/tv_data_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="08:42"
+        android:textColor="#EEEEEE"
+        android:textSize="12sp"
+        android:layout_marginTop="4dp"/>
+
+</LinearLayout>

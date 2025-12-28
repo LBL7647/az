@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- OneNET云平台配置弹窗布局 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="25dp"
+    android:background="@drawable/bg_dialog_card">
+
+    <!-- 配置标题 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OneNET 云平台配置"
+        android:textColor="#333333"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- 设备ID输入项 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="设备 ID (Device ID)"
+        android:textColor="#999999"
+        android:textSize="12sp"/>
+    <EditText
+        android:id="@+id/et_device_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:hint="请输入设备ID"
+        android:textColor="#333333"
+        android:textSize="16sp"
+        android:paddingVertical="10dp"/>
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EEEEEE" android:layout_marginBottom="15dp"/>
+
+    <!-- 产品ID输入项 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="产品 ID (Product ID)"
+        android:textColor="#999999"
+        android:textSize="12sp"/>
+    <EditText
+        android:id="@+id/et_product_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:hint="请输入产品ID"
+        android:textColor="#333333"
+        android:textSize="16sp"
+        android:paddingVertical="10dp"/>
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EEEEEE" android:layout_marginBottom="15dp"/>
+
+    <!-- API Key输入项 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="API Key / Token"
+        android:textColor="#999999"
+        android:textSize="12sp"/>
+    <EditText
+        android:id="@+id/et_api_key"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:hint="请输入API Key"
+        android:textColor="#333333"
+        android:textSize="16sp"
+        android:paddingVertical="10dp"/>
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EEEEEE" android:layout_marginBottom="25dp"/>
+
+    <!-- 操作按钮栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+        <!-- 取消按钮 -->
+        <TextView
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:textColor="#999999"
+            android:textSize="16sp"
+            android:padding="10dp"
+            android:layout_marginEnd="10dp"/>
+        <!-- 保存配置按钮 -->
+        <TextView
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="保存配置"
+            android:textColor="#2196F3"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="10dp"/>
+    </LinearLayout>
+</LinearLayout>

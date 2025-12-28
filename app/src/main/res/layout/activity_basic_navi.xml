@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 根布局：约束布局，适配导航页面整体布局 -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- 顶部导航信息卡片：展示道路、剩余距离/时间、转向提示 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#CC212121"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- 导航信息容器：垂直布局，承载各类导航文本信息 -->
+        <LinearLayout
+            android:id="@+id/navi_info_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- 当前道路名称文本 -->
+            <TextView
+                android:id="@+id/tv_road_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="当前道路：准备导航"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- 剩余距离/时间容器：水平布局展示两个文本 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <!-- 剩余距离文本 -->
+                <TextView
+                    android:id="@+id/tv_remaining_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="剩余: -- km"
+                    android:textColor="#E0E0E0"
+                    android:textSize="14sp" />
+
+                <!-- 剩余时间文本 -->
+                <TextView
+                    android:id="@+id/tv_remaining_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="预计: -- min"
+                    android:textColor="#E0E0E0"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- 分割线：分隔导航信息和转向提示 -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="8dp"
+                android:background="#33FFFFFF" />
+
+            <!-- 转向提示文本：突出显示导航指引 -->
+            <TextView
+                android:id="@+id/tv_turn_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="前方提示：--"
+                android:textColor="#FFC107"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- 底部蓝牙发送卡片：默认隐藏，用于蓝牙消息发送 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_bottom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- 蓝牙发送布局：水平排列输入框和发送按钮 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp">
+
+            <!-- 蓝牙发送输入框：输入要发送的内容 -->
+            <EditText
+                android:id="@+id/et_bluetooth_send"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="输入发送内容..."
+                android:textColor="#333333"
+                android:textSize="14sp" />
+
+            <!-- 分割线：分隔输入框和发送按钮 -->
+            <View
+                android:layout_width="1dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="8dp"
+                android:background="#CCCCCC" />
+
+            <!-- 发送按钮：触发蓝牙消息发送 -->
+            <Button
+                android:id="@+id/btn_bluetooth_send"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:backgroundTint="#2196F3"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="发送"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- 高德导航视图：核心导航展示区域，填充顶部卡片下方剩余空间 -->
+    <com.amap.api.navi.AMapNaviView
+        android:id="@+id/navi_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_info" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
